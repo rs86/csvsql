@@ -15,4 +15,4 @@ The table is loaded into the database as table "t".
 
 The script uses Pandas to load data into the SQLite3 instance using DataFrame.to_sql and queries the data also using DataFrame.read_sql. 
 
-We need a lighter way to do it.
+We need a lighter way to do it. If I get feedback showing that this tool might be useful, I'll put more effort into devleoping it.
