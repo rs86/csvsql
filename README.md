@@ -1,18 +1,11 @@
 # csvsql
+
 Query CSV files using SQL.
 
 ## How to use it
 
-    cat <csv-file> | python csvsqp.py <SQL>
+csvfile -f <csv file name> -s <sql query>
 
 ## How it works
 
-It just creates a SQLite3 in-memory database, loads data from the CSV file using Pandas and then queries it.
-
-The table is loaded into the database as table "t".
-
-## What we should do next
-
-The script uses Pandas to load data into the SQLite3 instance using DataFrame.to_sql and queries the data also using DataFrame.read_sql. 
-
-We need a lighter way to do it. If I get feedback showing that this tool might be useful, I'll put more effort into devleoping it.
+The script loads CSV files into a SQLite3 database and queries them. It saves the database do disk, so the CSV files are actually cached. It uses Adler32 checksums to check if the data cached on the SQLite DB is the same as in disk.
